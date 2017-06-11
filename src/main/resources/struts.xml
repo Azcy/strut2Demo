@@ -13,11 +13,13 @@
     <constant name="struts.devMode" value="true"/>
     <!-- 所有的Action定义都英国放在package下，Struts2中通过package来管理action，这里的包名name并不对应java类中的包-->
     <package name="wbb" extends="struts-default">
-        <action name="login" class="LoginAction">
+        <action name="*Action"  class="LoginAction"  method="{1}">
             <!-- 定义三个逻辑试图和物理资源之间的映射 -->
+            <result name="successregist">regist.jsp</result>
             <result name="input">login.jsp</result>
             <result name="error">error.jsp</result>
             <result name="success">success.jsp</result>
+
         </action>
     </package>
 </struts>

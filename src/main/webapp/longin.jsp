@@ -9,12 +9,38 @@
 <html>
 <head>
     <title>Login</title>
+    <script>
+        function login() {
+            targetForm=document.forms[0];
+            alert("登陆");
+            targetForm.method="post";
+            targetForm.action="loginAction";
+            targetForm.submit();
+
+        }
+        function regist() {
+
+            targetForm=document.forms[0];
+            alert("注册");
+            targetForm.method="post";
+            targetForm.action="registAction";//也可以通过"actionName!methodName,actionm"
+            targetForm.submit();
+
+        }
+    </script>
 </head>
+
 <body>
-        <form action="login" method="post">
-            用户名：<input type="text" name="username"></br>
-            密 码：<input type="text" name="password"></br>
-            <input type="submit" value="提交">
+        <form >
+            用户名：<input type="text" name="username"/><br>
+            密 码：<input type="text" name="password"/><br>
+
+            <input type="submit" onclick="login();" value="登陆"/>
+            <input type="submit" onclick="regist();" value="注册"/>
+            <%--<button type="button" onclick="regist()">注册</button>--%>
+            <%--<button type="button" onclick="login()">登陆</button>--%>
+
         </form>
+
 </body>
 </html>
